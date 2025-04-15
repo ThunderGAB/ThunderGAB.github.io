@@ -1,0 +1,386 @@
+/* CSS Reset */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Font */
+@font-face {
+  font-family: "lxgw-regular";
+  src: url(fonts/LXGWWenKaiMonoTC-Light.ttf);
+}
+
+/* Base Styles */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: url(img/forest.png) no-repeat center center fixed;
+  background-size: cover;
+  /* Vendor prefixes consolidated using the standard property last */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Link Styles */
+a {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/* Layout Container */
+#container {
+  font-family: lxgw-regular;
+}
+
+/* Navigation */
+#navbar {
+  width: 90%;
+  height: 50px;
+  margin: 30px auto 0;
+  position: sticky;
+  top: 0;
+  background-color: #75b37b;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+}
+
+#logo {
+  height: 50px;
+  margin: auto;
+}
+
+/* Button Styles */
+.test_button {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d4c08;
+  border: 2px solid #7fff23;
+  border-radius: 30px;
+  color: white;
+}
+
+.test_button:hover {
+  animation: in-change 0.5s forwards;
+}
+
+#button_grid {
+  margin-left: 5%;
+}
+
+/* Content Sections */
+#introduction {
+  width: 40%;
+  margin-top: 60px;
+  padding: 10px;
+  background-color: #75b37b;
+  border-radius: 20px;
+  text-align: center;
+  font-family: lxgw-regular;
+  height: fit-content;
+}
+
+#my_photo {
+  margin-top: 60px;
+}
+
+#my_photo > img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* About Section */
+#about_me {
+  width: 80%;
+  margin: 100px auto 0;
+  display: flex;
+}
+
+.des {
+  word-wrap: break-word;
+  padding: 20px 1.6666%;
+  background-color: #75b37b;
+  text-align: center;
+}
+
+/* Skills Section */
+.skills {
+  width: 60%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: #75b37b;
+  border-radius: 20px;
+  text-align: left;
+  height: fit-content;
+}
+
+.skills:not(.skills ~ .skills) {
+  text-align: center;
+}
+
+.skills-category {
+  border-bottom: 1px dashed black;
+}
+
+/* Summary Section */
+#summary {
+  width: 50%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: #75b37b;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Copyright Section */
+#copyright {
+  width: 30%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: #75b37b;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
+/* Field Layouts */
+.left_field,
+.right_field,
+.entry_field {
+  width: 50%;
+  margin-top: 60px;
+  padding: 10px;
+  background-color: #75b37b;
+  border-radius: 20px;
+  word-wrap: break-word;
+  font-family: lxgw-regular;
+}
+
+.left_field {
+  margin-left: 10%;
+}
+
+.right_field {
+  margin-left: 40%;
+  text-align: right;
+}
+
+.entry_field {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Field Content Styles */
+.left_entry > img {
+  height: 80%;
+}
+
+.entry_field > img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: 5px auto 2%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.entry_field > h1,
+.left_field > h1,
+.right_field > h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Contact Section */
+#contact_container {
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact_container > div {
+  width: 20%;
+  background-color: #75b37b;
+  border-radius: 20px;
+}
+
+#contact_container > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact_container > div > a > img {
+  width: 90%;
+  padding: 5px;
+}
+
+#contact_container > div:hover {
+  background-color: #86c48c;
+  transition: background-color 100ms linear;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+}
+
+/* Animations */
+@keyframes popout {
+  from { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  to { transform: scale(1); }
+}
+
+@-webkit-keyframes popout {
+  from { -webkit-transform: scale(0); }
+  80% { -webkit-transform: scale(1.2); }
+  to { -webkit-transform: scale(1); }
+}
+
+@keyframes in-change {
+  to {
+    background-color: #04aa6d;
+    border-color: #0d4c08;
+    color: black;
+  }
+}
+
+/* Media Queries */
+@media only screen and (min-width: 750px) {
+  #introduction {
+    margin-left: 10%;
+  }
+  
+  .des:first-child {
+    border-radius: 20px 0 0 20px;
+  }
+  
+  .des:last-child {
+    border-radius: 0 20px 20px 0;
+  }
+  
+  .des {
+    width: 30%;
+  }
+  
+  #my_photo {
+    margin-right: 10%;
+    width: 25%;
+  }
+  
+  #conv_con {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+  }
+  
+  #contact_container {
+    width: 40%;
+  }
+  
+  #logo {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  
+  #button_grid {
+    display: flex;
+  }
+  
+  #grid_1,
+  #grid_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 750px) {
+  #navbar {
+    height: 100px !important;
+  }
+  
+  #contact_container {
+    width: 60% !important;
+  }
+  
+  #button_grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #grid_1 {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #introduction {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .des:first-child {
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .des:last-child {
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .des {
+    width: 100%;
+  }
+  
+  #my_photo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  #about_me {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #navbar {
+    height: 150px;
+  }
+  
+  #contact_container {
+    width: 80%;
+  }
+  
+  #logo {
+    margin-left: calc(50% - 96px);
+  }
+  
+  #grid_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  #grid_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
